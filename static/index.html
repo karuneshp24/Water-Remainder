@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQUA-G | Antigravity Hydration</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="space-background"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo">AQUA-G<span>_V1.0</span></div>
+            <div class="status-bar">
+                <span class="code-accent">// ZERO_G_ACTIVE</span>
+                <span id="current-time">20:31</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="phone-frame">
+                    <div class="phone-screen">
+                        <div class="app-ui">
+                            <div class="progress-container">
+                                <svg viewBox="0 0 100 100">
+                                    <circle class="bg" cx="50" cy="50" r="45"></circle>
+                                    <circle class="progress" cx="50" cy="50" r="45" id="progress-circle"></circle>
+                                </svg>
+                                <div class="percentage" id="percentage">0%</div>
+                            </div>
+                            <div class="stats">
+                                <div class="stat-item">
+                                    <label>CURRENT</label>
+                                    <div class="value" id="current-ml">0 ml</div>
+                                </div>
+                                <div class="stat-item">
+                                    <label>GOAL</label>
+                                    <div class="value" id="goal-ml">2500 ml</div>
+                                </div>
+                            </div>
+                            <div class="controls">
+                                <button onclick="addWater(250)">+250ml</button>
+                                <button onclick="addWater(500)">+500ml</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="holographic-notifications" id="notifications">
+                        <!-- Dynamic notifications here -->
+                    </div>
+                </div>
+            </section>
+
+            <aside class="dashboard">
+                <div class="card glass">
+                    <h3>REMINDER_SETTINGS</h3>
+                    <div class="settings-row">
+                        <label>INTERVAL (MIN)</label>
+                        <input type="number" id="interval-input" value="60" min="1" max="1440">
+                    </div>
+                    <button class="small-btn" onclick="updateInterval()">SET_SYNC</button>
+                    <div class="next-reminder" id="next-reminder-info">NEXT: --:--</div>
+                </div>
+                <div class="card glass">
+                    <h3>DAILY_TRACKER</h3>
+                    <div class="log-list" id="log-list">
+                        <!-- Logs here -->
+                    </div>
+                </div>
+                <div class="card glass code-card">
+                    <pre><code>
+> INITIALIZING SYSTEM...
+> SENSORS: CALIBRATED
+> GRAVITY: 0.00G
+> STATUS: OPTIMAL
+                    </code></pre>
+                </div>
+            </aside>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
